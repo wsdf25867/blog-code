@@ -9,3 +9,4 @@ class WithSecurityContextFactoryApplication
 fun main(args: Array<String>) {
     runApplication<WithSecurityContextFactoryApplication>(*args)
 }
+
