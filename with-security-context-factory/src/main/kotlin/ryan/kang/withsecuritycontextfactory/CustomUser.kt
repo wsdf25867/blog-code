@@ -5,9 +5,7 @@ import org.springframework.security.core.userdetails.UserDetails
 
 class CustomUser(val userName: String, val userPassword: String) : UserDetails {
 
-    override fun getAuthorities(): Collection<GrantedAuthority> {
-        throw UnsupportedOperationException()
-    }
+    override fun getAuthorities(): Collection<GrantedAuthority> = emptyList()
 
     override fun getPassword(): String = this.userPassword
 

@@ -11,7 +11,7 @@ class SecurityConfig {
     fun httpSecurity(http: HttpSecurity): SecurityFilterChain =
         http
             .authorizeHttpRequests {
-                it.anyRequest().denyAll()
+                it.anyRequest().authenticated()
             }
             .formLogin {
 

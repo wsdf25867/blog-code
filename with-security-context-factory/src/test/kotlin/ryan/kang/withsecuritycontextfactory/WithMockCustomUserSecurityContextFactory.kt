@@ -9,7 +9,7 @@ class WithMockCustomUserSecurityContextFactory : WithSecurityContextFactory<With
     override fun createSecurityContext(annotation: WithMockCustomUser): SecurityContext {
         return SecurityContextHolder.createEmptyContext().apply {
             val principal = CustomUser(annotation.username, annotation.password)
-            authentication = UsernamePasswordAuthenticationToken(principal, principal.password)
+            authentication = UsernamePasswordAuthenticationToken(principal, principal.password, principal.authorities)
         }
     }
 }
