@@ -16,9 +16,6 @@ class SecurityConfig {
             .formLogin {
 
             }
-            .userDetailsService { username ->
-                CustomUser(username, "")
-            }
             .build()
 
 }
