@@ -17,7 +17,9 @@ class HelloControllerTest {
     fun testHello() {
         val result = mockMvcTester.get().uri("/hello").exchange()
 
-        assertThat(result).hasStatusOk()
-            .hasBodyTextEqualTo("Hello")
+        assertThat(result)
+            .hasStatusOk()
+            .bodyText()
+            .isEqualTo("Hello")
     }
 }
