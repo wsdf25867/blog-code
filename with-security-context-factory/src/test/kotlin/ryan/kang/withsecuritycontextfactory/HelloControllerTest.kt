@@ -4,6 +4,7 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest
+import org.springframework.http.MediaType
 import org.springframework.test.web.servlet.assertj.MockMvcTester
 
 @WebMvcTest
@@ -19,6 +20,7 @@ class HelloControllerTest {
 
         assertThat(result)
             .hasStatusOk()
+            .hasContentType("${MediaType.TEXT_PLAIN_VALUE};charset=utf-8")
             .bodyText()
             .isEqualTo("Hello")
     }
